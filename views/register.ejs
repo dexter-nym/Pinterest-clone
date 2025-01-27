@@ -1,0 +1,59 @@
+<% include ./partials/header.ejs%>
+
+<div
+  class="w-full h-screen bg-[url(https://imgs.search.brave.com/1klZbo7jvkISWsvkLAzpz_JwPDdKPnRCv3083uqRPgo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM5/MTkwNzAzMC92ZWN0/b3IvYWJzdHJhY3Qt/c2ltcGx5LWJhY2tn/cm91bmQtd2l0aC1u/YXR1cmFsLWxpbmUt/YXJ0cy1zdW1tZXIt/dGhlbWUuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPTU4VTVV/SFBpOTZCWUVIbEpH/Z2drLVFEYzhNQnF1/ZV9YYVRHV1lTUFZ6/UlE9)] bg-center bg-cover flex items-center justify-center"
+>
+  <div class="w-[35vw] h-[71vh] bg-white px-15 py-10 rounded-[30px]">
+    <h1
+      class="mb-5 text-3xl text-center font-semibold text-zinc-700 tracking-tighter capitalize leading-none"
+    >
+      Create new account.
+    </h1>
+    <form action="/users/register" method="POST">
+      <input
+        class="block mt-2 w-full px-3 py-2 border-2 border-zinc-300 rounded-[10px]"
+        type="text"
+        name="username"
+        placeholder="Username"
+      />
+      <input
+        class="block mt-2 w-full px-3 py-2 border-2 border-zinc-300 rounded-[10px]"
+        type="email"
+        name="email"
+        placeholder="Email"
+      />
+      <input
+        class="block mt-2 w-full px-3 py-2 border-2 border-zinc-300 rounded-[10px]"
+        type="password"
+        name="password"
+        placeholder="Password"
+      />
+      <input
+        class="block mt-2 w-full px-3 py-2 bg-red-600 text-white rounded-full"
+        type="submit"
+        name="submit"
+        value="Register"
+      />
+    </form>
+    <div class="flex flex-col justify-center items-center mt-6">
+      <p class="text-xs text-center font-semibold text-zinc-700 w-2/3 mx-auto">
+        By continuing, you agree to Pinterest's Terms of Service and acknowledge
+        you've read our Privacy Policy.<br />
+      </p>
+      <hr class="w-[50%] mt-2 border-zinc-500" />
+      <p
+        class="text-xs text-center font-semibold text-zinc-700 mt-2 w-2/3 mx-auto"
+      >
+        Sign up are you a business?<br />
+        Get started here!
+      </p>
+    </div>
+    <a
+      href="/"
+      class="w-full inline-block mt-6 font-semibold text-zinc-700 text-center"
+      >Have an account ?</a
+    >
+  </div>
+</div>
+
+<% include ./partials/footer.ejs%>
