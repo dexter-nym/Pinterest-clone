@@ -11,6 +11,7 @@ const upload = require("./multer");
 
 // Models
 const userModel = require("../models/register");
+const postModel = require("../models/post");
 
 passport.use(new localStrategy(userModel.authenticate()));
 
@@ -80,7 +81,26 @@ router.post(
     res.render("profile", { user });
   }
 );
+router.post(
+  "/createpost",
+  isLoggedIn,
+  upload.single("image"),
+  async function (req, res) {
+    try {
+      const user = await userModel.findOne({ _id: req.session.passport.user });
+      const { title, description } = req.body;
+      const post = await postModel.create({
+        title,
+        description,
+        postImage,
+      });
+    } catch (error) {
+      res.render("error", error);
+    }
+  }
+);
 
+// Middlewares
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
